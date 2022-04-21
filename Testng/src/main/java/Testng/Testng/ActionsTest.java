@@ -23,7 +23,7 @@ public class ActionsTest {
 		driver.get("https://www.google.com/");
 		
 	}
-	@Test(priority=8)
+	@Test()
 	public  void mouseCursorTest() throws InterruptedException
 	{
 		Thread.sleep(2000);
