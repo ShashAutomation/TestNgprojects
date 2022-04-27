@@ -21,23 +21,25 @@ public class Dropdown {
 		
 	}
 	@Test(priority=1)
-	public void dropdown1()
+	public void dropdown1() throws InterruptedException
 	{
 		driver.navigate().to("https://account.magento.com/customer/account/create/");
 		Select s=new Select(driver.findElement(By.id("company_type")));
-		s.selectByVisibleText("Tech Partner");
-	
-    }
+		s.selectByValue("selling");
+		Select s1=new Select(driver.findElement(By.id("individual_role")));
+		s1.selectByVisibleText("Technical/developer");
+		Thread.sleep(2000);
+        }
 	@Test(priority=2)
 	public void dropdown2() throws InterruptedException
 	{
 		driver.navigate().to("https://www.roblox.com/");
 		Select s=new Select(driver.findElement(By.id("MonthDropdown")));
-		s.selectByVisibleText("October");
+		s.selectByValue("Oct");
 		Select s1=new Select(driver.findElement(By.id("DayDropdown")));
 		s1.selectByVisibleText("15");
 		Select s2=new Select(driver.findElement(By.id("YearDropdown")));
-		s2.selectByVisibleText("1997");
+		s2.selectByIndex(26);
 		Thread.sleep(2000);
 	}
 	@AfterMethod
